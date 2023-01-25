@@ -34,7 +34,7 @@
     },
     methods: {
       async submit() {
-        var payloads = await csv().fromString(this.text);
+        var payloads = await csv({ noheader: true }).fromString(this.text);
         if (this.is_using_likerid) {
           this.$message({
             message: `Processing Liker ID.`,
